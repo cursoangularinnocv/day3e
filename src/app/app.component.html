@@ -1,8 +1,15 @@
-<nav>
+<!-- <nav>
   <ul>
     <li> <a [routerLink]="['home']"> Home </a> </li>
     <li> <a [routerLink]="['products', 123]"> Product </a> </li>
     <li> <a [routerLink]="['about']"> About </a> </li>
   </ul>
-</nav>
+</nav> -->
+
+<ul>
+  <li *ngFor="let book of books">
+    <app-book [bookInfo]="book" (onBookSelected)="selectBook($event)"></app-book>
+  </li>
+</ul>
+
 <router-outlet></router-outlet>
